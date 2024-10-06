@@ -7,6 +7,6 @@ ps -A -o pid,uid,gid,comm | grep naive   #result：114514 0 3005 naive
 ```
 等效于
 ```sh
-/data/u/tools/prochelper -name "/data/u/naiveDir/naive" -uid 0 -gid 3005 -out "null" -err "null" -- "-c /data/u/naiveDir/config.json"
+/data/u/tools/prochelper -name "/data/u/naiveDir/naive" -uid 0 -gid 3005 -out "null" -err "null" -- -c /data/u/naiveDir/config.json
 ps -A -o pid,uid,gid,comm | grep naive   #result：114514 0 3005 naive
 ```
