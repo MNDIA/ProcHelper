@@ -76,4 +76,4 @@ jobs:
         with:
           name: ProcHelper
           path: |
-            build_assets/prochelper/*
+            build_assets/prochelper
