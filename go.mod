@@ -1,4 +1,4 @@
-module XrayHelper
+module ProcHelper
 
 go 1.23.0
 
