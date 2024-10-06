@@ -82,7 +82,7 @@ jobs:
           name: procHelper
           tag: procHelper
           body: This release is built by github-action.
-          artifacts: "ProcHelper.zip"
+          artifacts: build_assets/prochelper
           allowUpdates: true
           makeLatest: true
           omitBodyDuringUpdate: true
