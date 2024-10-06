@@ -27,10 +27,6 @@ jobs:
             goarch: arm64
             cc: aarch64-linux-android35-clang
             cxx: aarch64-linux-android35-clang++
-          - goos: android
-            goarch: amd64
-            cc: x86_64-linux-android35-clang
-            cxx: x86_64-linux-android35-clang++
       fail-fast: false
 
     runs-on: ubuntu-latest
@@ -77,3 +73,17 @@ jobs:
           name: ProcHelper
           path: |
             build_assets/prochelper
+
+      - name: Upload release
+        if: success() && !cancelled()
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: procHelper
+          tag: procHelper
+          body: This release is built by github-action.
+          artifacts: "ProcHelper"
+          allowUpdates: true
+          makeLatest: true
+          omitBodyDuringUpdate: true
+          replacesArtifacts: true
